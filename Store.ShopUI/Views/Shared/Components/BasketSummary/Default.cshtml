@@ -1,0 +1,29 @@
+﻿@using Store.Core.Domain.Baskets
+@model Basket
+
+<div class="m-1 p-1">
+    <table class="table table-bordered table-striped table-secondary">
+        <tr>
+            <td>Items in the basket:</td>
+            <td>
+                @if (Model.Items.Any())
+                {
+                    <span>@Model.Items.Sum(i => i.Quantity)</span>
+                }
+                else
+                {
+                    <span>0</span>
+                }
+            </td>
+        </tr>
+        <tr>
+            <td>Total price:</td>
+            <td>@Model.TotalPrice</td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <a class="btn btn-success" asp-controller="Basket" asp-action="Index">Basket</a>
+            </td>
+        </tr>
+    </table>
+</div>

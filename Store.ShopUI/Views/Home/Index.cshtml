@@ -1,0 +1,7 @@
+﻿@model ProductListViewModel
+<h1>Welcome to our store!</h1>
+@foreach (var item in Model.Data.Data)
+{
+    Html.RenderPartial("ProductSummary", item);
+}
+<div class="btn-group m-1" page-model="Model.Data.PageInfo" page-action="Index" page-classes-enabled="true" page-class="btn" page-class-normal="btn-outline-dark" page-class-selected="btn-success"></div>
